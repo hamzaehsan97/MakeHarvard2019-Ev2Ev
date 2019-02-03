@@ -1,0 +1,6 @@
+framework module Pods_Ev2EvUITests {
+  umbrella header "Pods-Ev2EvUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
