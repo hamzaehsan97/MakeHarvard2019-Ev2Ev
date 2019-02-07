@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+{% block body %}
+<p>{
+    "meta":{
+        "code":200,
+        "requestedId":"59b3feac4434b92c3adf87f1"
+    },
+    "responses":{
+	    "cars" : [
+	        {
+	        {% for key, value in dataTest.items() %}
+	        "{{key}}" : "{{value}}"
+	        {% endfor %}
+	        }
+	    ]
+	}
+    </p>
+      {% endblock %}

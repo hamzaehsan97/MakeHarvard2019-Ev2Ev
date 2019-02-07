@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block body %}
+ <h1> Locations </h1>
+ <ul class="list-group">
+ {% for location in Locations %}
+  <li class="list-group-item">{{location.id}}<br>{{location.name}}</li>
+  {% endfor %}
+</ul>
+{% endblock %}

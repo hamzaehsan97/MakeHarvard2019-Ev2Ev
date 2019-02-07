@@ -1,24 +1,49 @@
-<!DOCTYPE>
-<html>
-<head>
-    <H1>EV2EV</H1>
-    </head>
-    <body>
-        <form>
-            Id:<br>
-  <input type="text" >
-  <br>
-  Name:<br>
-  <input type="text" >
-  <br>
-  Latitude:<br>
-  <input type="text" >
-  <br>Longitude:<br>
-  <input type="text" >
-  <br><br>
-  <input type="submit" value="Submit">
+{% extends 'layout.html' %}
+{% block body %}
+/* $message = '';
+$error = '';
+if(isset($_POST["submit"]))
+{
+	if(file_exists('ajax_data.json')){
+		$current_Data = file_get_contents('ajax_data.json');
+		json_decode($current_Data,true);
+		$extra = array(
+		'id' => $_POST['id'],
+		'name'=> $_POST['name'],
+		'latitude' => $_POST['latitude'],
+		'longitude' => $_POST['longitude']
+		);
+		%array_Data[] = $extra;
+		$final_Data = json_encode($array_Data);
+		if(file_put_contents('ajax_data.json',$final_Data)){
+			$message = 'data transferred successfully!';
+		}else{
+			$error = '<p>data could not be transferred</p>';
+		}
+
+	}else{
+		$error = "file does not exist";
+	}
+}
+ ?>
+} */
+        <form action = "http://127.0.0.1:5000/dataTest" method="POST">
+        	<?php
+        		if(isset($error){
+        		echo $error;
+        	}
+        	?>
+  <p>id <input type = "int" name = "id" /></p>
+         <p>name <input type = "text" name = "name" /></p>
+         <p>latitude <input type = "double" name = "latitude" /></p>
+         <p>longitude <input type ="double" name = "longitude" /></p>
+         <p><input type = "submit" value = "submit" /></p>
+         <?php
+        		if(isset($message){
+        		echo $message;
+        	}
+        	?>
 </form> 
 
 
-    </body>
-</html>
+{% endblock %}
